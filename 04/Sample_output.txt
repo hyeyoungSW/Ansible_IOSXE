@@ -1,0 +1,76 @@
+
+PLAY [Introduction to IOS XE Configuration Management with Ansible - Mission] **********************************************************************************************************************************************************************************************************************************************************************************************************************
+
+TASK [run show vrf] ****
+ok: [198.18.133.100]
+ok: [198.18.133.110]
+
+
+TASK [display value of "myvrf1" variable] **
+ok: [198.18.133.100] => {
+    "myvrf1["stdout_lines"][0]": [
+        ""
+    ]
+}
+ok: [198.18.133.110] => {
+    "myvrf1["stdout_lines"][0]": [
+        ""
+    ]
+}
+
+
+TASK [Create loopback interfaces] **
+changed: [198.18.133.100] => (item=11)
+changed: [198.18.133.110] => (item=11)
+changed: [198.18.133.100] => (item=12)
+changed: [198.18.133.110] => (item=12)
+changed: [198.18.133.100] => (item=13)
+changed: [198.18.133.110] => (item=13)
+changed: [198.18.133.100] => (item=14)
+changed: [198.18.133.110] => (item=14)
+
+
+TASK [Mission Checkpoint] **
+skipping: [198.18.133.100]
+skipping: [198.18.133.110]
+
+
+TASK [Create VRFs as defined by local_vrfs] ****
+changed: [198.18.133.100]
+changed: [198.18.133.110]
+
+
+TASK [Mission Checkpoint] **
+skipping: [198.18.133.100]
+skipping: [198.18.133.110]
+
+
+TASK [run show vrf] ****
+ok: [198.18.133.100]
+ok: [198.18.133.110]
+
+
+TASK [display value of "myvrf2" variable] **
+ok: [198.18.133.100] => {
+    "myvrf2['stdout_lines'][0]": [
+        "Name                             Default RD            Protocols   Interfaces",
+        "  blue                             1:410                             Lo1712",
+        "  green                            1:420                             Lo1713",
+        "  red                              1:400                             Lo1711",
+        "  yellow                           1:17                              Lo1714"
+    ]
+}
+ok: [198.18.133.110] => {
+    "myvrf2['stdout_lines'][0]": [
+        "Name                             Default RD            Protocols   Interfaces",
+        "  blue                             1:410                             Lo1712",
+        "  green                            1:420                             Lo1713",
+        "  red                              1:400                             Lo1711",
+        "  yellow                           1:17                              Lo1714"
+    ]
+}
+
+
+PLAY RECAP *****
+198.18.133.100             : ok=6    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0
+198.18.133.110             : ok=6    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0
